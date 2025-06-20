@@ -5,7 +5,6 @@ const WalletPage = () => {
     const [wallet, setWallet]= useState(null); // for keeping track of the wallet
     const createWallet = async () => {
         const wallet = ethers.Wallet.createRandom();
-
         const provider = new ethers.providers.JsonRpcProvider("https://mainnet.infura.io/v3/841e9040409244cab0f455e38d94ef07"); 
         const rawBalance = await provider.getBalance(wallet.address);
         const balanceInEth = ethers.utils.formatEther(rawBalance);
